@@ -18,4 +18,4 @@
 	url = http://github.com/tpope/vim-vividchalk.git
 [submodule "bundle/ragtag"]
 	path = bundle/ragtag
-	url = http://github.com/tpope/vim-vividchalk.git
+	url = http://github.com/tpope/vim-ragtag.git
