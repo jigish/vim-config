@@ -86,7 +86,8 @@ colorscheme lucius
 " A command to delete all trailing whitespace from a file.
 command! DeleteTrailingWhitespace %s:\(\S*\)\s\+$:\1:
 
-" Toggle colorcolumn
+" ColorColumn
+hi ColorColumn guibg=#363946
 function! ToggleColorColumn()
   if &colorcolumn == 0
     " Draw the color column wherever wrapmargin is set
