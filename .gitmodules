@@ -46,3 +46,12 @@
 [submodule "bundle/jellybeans"]
 	path = bundle/jellybeans
 	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "bundle/moria"]
+	path = bundle/moria
+	url = https://github.com/vim-scripts/moria.git
+[submodule "bundle/moria-theme"]
+	path = bundle/moria-theme
+	url = https://github.com/vim-scripts/moria.git
+[submodule "bundle/jellybeans-theme"]
+	path = bundle/jellybeans-theme
+	url = https://github.com/nanotech/jellybeans.vim.git
