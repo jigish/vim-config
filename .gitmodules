@@ -76,3 +76,6 @@
 [submodule "bundle/actionscript-syntax"]
 	path = bundle/actionscript-syntax
 	url = https://github.com/vim-scripts/actionscript.vim--Cuss.git
+[submodule "bundle/ack"]
+	path = bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
