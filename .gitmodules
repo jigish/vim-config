@@ -61,3 +61,6 @@
 [submodule "bundle/vividchalk-theme"]
 	path = bundle/vividchalk-theme
 	url = https://github.com/tpope/vim-vividchalk.git
+[submodule "bundle/inkpot-theme"]
+	path = bundle/inkpot-theme
+	url = http://github.com/ciaranm/inkpot
