@@ -55,3 +55,6 @@
 [submodule "bundle/jellybeans-theme"]
 	path = bundle/jellybeans-theme
 	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "bundle/xoria256-theme"]
+	path = bundle/xoria256-theme
+	url = https://github.com/vim-scripts/xoria256.vim.git
