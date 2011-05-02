@@ -100,3 +100,6 @@ call ToggleColorColumn()
 
 " TagList
 map <leader>l :TlistToggle<CR>
+
+" Fugitive
+map <leader>gs :Gstatus<CR>
