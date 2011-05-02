@@ -103,3 +103,4 @@ map <leader>l :TlistToggle<CR>
 
 " Fugitive
 map <leader>gs :Gstatus<CR>
+map <leader>gc :Gcommit<CR>
