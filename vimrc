@@ -95,6 +95,8 @@ function! ToggleColorColumn()
   endif
 endfunction
 command! ToggleColorColumn call ToggleColorColumn()
-map <leader>l :ToggleColorColumn<CR>
-
+map <leader>c :ToggleColorColumn<CR>
 call ToggleColorColumn()
+
+" TagList
+map <leader>l :TlistToggle<CR>
