@@ -53,6 +53,7 @@ nnoremap S d$O<ESC>p==
 
 " Command-T
 map <silent><C-t> :CommandT<CR>
+map <silent><C-b> :CommandTBuffer<CR>
 
 " NERDTree
 let g:NERDTreeChDirMode=2
