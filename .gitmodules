@@ -64,3 +64,9 @@
 [submodule "bundle/inkpot-theme"]
 	path = bundle/inkpot-theme
 	url = http://github.com/ciaranm/inkpot
+[submodule "bundle/peaksea-theme"]
+	path = bundle/peaksea-theme
+	url = https://github.com/vim-scripts/peaksea.git
+[submodule "bundle/darkspectrum-theme"]
+	path = bundle/darkspectrum-theme
+	url = https://github.com/vim-scripts/darkspectrum.git
