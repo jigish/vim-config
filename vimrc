@@ -34,6 +34,7 @@ set undofile
 set backspace=indent,eol,start
 set linespace=3
 set incsearch
+set shortmess=atI
 
 " Ensure the temp dirs exist
 call system("mkdir -p ~/.vim/tmp/swap")
