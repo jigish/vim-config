@@ -58,3 +58,6 @@
 [submodule "bundle/xoria256-theme"]
 	path = bundle/xoria256-theme
 	url = https://github.com/vim-scripts/xoria256.vim.git
+[submodule "bundle/vividchalk-theme"]
+	path = bundle/vividchalk-theme
+	url = https://github.com/tpope/vim-vividchalk.git
