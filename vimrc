@@ -50,6 +50,9 @@ let mapleader = ","
 nnoremap s i<CR><ESC>==
 nnoremap S d$O<ESC>p==
 
+" Command-T
+map <silent><C-t> :CommandT<CR>
+
 " NERDTree
 let g:NERDTreeChDirMode=2
 let g:NERDChristmasTree=1
