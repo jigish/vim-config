@@ -34,3 +34,9 @@
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = http://github.com/mhz/vim-matchit
+[submodule "bundle/lucius-theme"]
+	path = bundle/lucius-theme
+	url = http://github.com/vim-scripts/Lucius.git
+[submodule "bundle/taglist"]
+	path = bundle/taglist
+	url = http://github.com/vim-scripts/taglist.vim.git
