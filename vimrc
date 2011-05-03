@@ -47,6 +47,8 @@ set undodir=~/.vim/tmp/undo/
 
 " Mappings
 let mapleader = ","
+nnoremap <C-j> 10j
+nnoremap <C-k> 10k
 " Caleb's cool s and S mappings
 nnoremap s i<CR><ESC>==
 nnoremap S d$O<ESC>p==
