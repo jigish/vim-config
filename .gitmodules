@@ -79,3 +79,12 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "bundle/python-syntax"]
+	path = bundle/python-syntax
+	url = https://github.com/vim-scripts/python.vim--Vasiliev.git
+[submodule "bundle/scala-syntax"]
+	path = bundle/scala-syntax
+	url = https://github.com/ewiplayer/vim-scala
+[submodule "bundle/thrift-syntax"]
+	path = bundle/thrift-syntax
+	url = https://github.com/jigish/vim-thrift.git
