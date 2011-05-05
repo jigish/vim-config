@@ -74,6 +74,12 @@ endif
 set list
 set listchars=tab:▸\ ,eol:¬
 
+" ColorScheme
+set t_Co=16
+set background=dark
+colorscheme lucius
+hi ColorColumn guibg=#363946
+
 " Show extra whitespace
 hi ExtraWhitespace guibg=#CCCCCC
 hi ExtraWhitespace ctermbg=7
@@ -82,12 +88,6 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-
-" ColorScheme
-set t_Co=16
-set background=dark
-colorscheme lucius
-hi ColorColumn guibg=#363946
 
 " A command to delete all trailing whitespace from a file.
 command! DeleteTrailingWhitespace %s:\(\S*\)\s\+$:\1:
