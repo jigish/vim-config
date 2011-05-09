@@ -88,6 +88,3 @@
 [submodule "bundle/thrift-syntax"]
 	path = bundle/thrift-syntax
 	url = https://github.com/jigish/vim-thrift.git
-[submodule "bundle/find"]
-	path = bundle/find
-	url = https://github.com/jigish/vim-find.git
