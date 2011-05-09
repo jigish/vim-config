@@ -118,3 +118,6 @@ map <leader>gd :Gdiff<CR>
 
 " Ack
 map <leader>a :Ack 
+
+" Find
+map <leader>f :FindNoRepo 
