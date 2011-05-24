@@ -88,3 +88,6 @@
 [submodule "bundle/thrift-syntax"]
 	path = bundle/thrift-syntax
 	url = https://github.com/jigish/vim-thrift.git
+[submodule "bundle/cocoa-syntax"]
+	path = bundle/cocoa-syntax
+	url = https://github.com/msanders/cocoa.vim.git
