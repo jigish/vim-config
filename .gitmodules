@@ -91,6 +91,3 @@
 [submodule "bundle/cocoa-syntax"]
 	path = bundle/cocoa-syntax
 	url = https://github.com/msanders/cocoa.vim.git
-[submodule "bundle/markdown-syntax"]
-	path = bundle/markdown-syntax
-	url = https://github.com/plasticboy/vim-markdown.git
