@@ -93,6 +93,7 @@ autocmd BufWinLeave * call clearmatches()
 
 " A command to delete all trailing whitespace from a file.
 command! DeleteTrailingWhitespace %s:\(\S*\)\s\+$:\1:
+nnoremap <silent><F5> :DeleteTrailingWhitespace<CR>
 
 " ColorColumn
 function! ToggleColorColumn()
