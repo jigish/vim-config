@@ -1,45 +1,45 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
-	url = http://github.com/scrooloose/nerdtree.git
+	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle/surround"]
 	path = bundle/surround
-	url = http://github.com/tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git
 [submodule "bundle/repeat"]
 	path = bundle/repeat
-	url = http://github.com/tpope/vim-repeat.git
+	url = https://github.com/tpope/vim-repeat.git
 [submodule "bundle/endwise"]
 	path = bundle/endwise
-	url = http://github.com/tpope/vim-endwise.git
+	url = https://github.com/tpope/vim-endwise.git
 [submodule "bundle/vividchalk"]
 	path = bundle/vividchalk
-	url = http://github.com/tpope/vim-vividchalk.git
+	url = https://github.com/tpope/vim-vividchalk.git
 [submodule "bundle/ragtag"]
 	path = bundle/ragtag
-	url = http://github.com/tpope/vim-ragtag.git
+	url = https://github.com/tpope/vim-ragtag.git
 [submodule "bundle/git"]
 	path = bundle/git
-	url = http://github.com/tpope/vim-git.git
+	url = https://github.com/tpope/vim-git.git
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
-	url = http://github.com/scrooloose/nerdcommenter.git
+	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/ruby"]
 	path = bundle/ruby
-	url = http://github.com/vim-ruby/vim-ruby.git
+	url = https://github.com/vim-ruby/vim-ruby.git
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = https://github.com/wincent/Command-T.git
 [submodule "bundle/matchit"]
 	path = bundle/matchit
-	url = http://github.com/tsaleh/vim-matchit.git
+	url = https://github.com/tsaleh/vim-matchit.git
 [submodule "bundle/lucius-theme"]
 	path = bundle/lucius-theme
-	url = http://github.com/vim-scripts/Lucius.git
+	url = https://github.com/vim-scripts/Lucius.git
 [submodule "bundle/taglist"]
 	path = bundle/taglist
-	url = http://github.com/vim-scripts/taglist.vim.git
+	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "bundle/freya-theme"]
 	path = bundle/freya-theme
 	url = https://github.com/vim-scripts/freya.git
@@ -63,7 +63,7 @@
 	url = https://github.com/tpope/vim-vividchalk.git
 [submodule "bundle/inkpot-theme"]
 	path = bundle/inkpot-theme
-	url = http://github.com/ciaranm/inkpot
+	url = https://github.com/ciaranm/inkpot.git
 [submodule "bundle/peaksea-theme"]
 	path = bundle/peaksea-theme
 	url = https://github.com/vim-scripts/peaksea.git
@@ -73,18 +73,12 @@
 [submodule "bundle/actionscript"]
 	path = bundle/actionscript
 	url = https://github.com/vim-scripts/actionscript.vim.git
-[submodule "bundle/actionscript-syntax"]
-	path = bundle/actionscript-syntax
-	url = https://github.com/vim-scripts/actionscript.vim--Cuss.git
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "bundle/python-syntax"]
 	path = bundle/python-syntax
 	url = https://github.com/vim-scripts/python.vim--Vasiliev.git
-[submodule "bundle/scala-syntax"]
-	path = bundle/scala-syntax
-	url = https://github.com/ewiplayer/vim-scala
 [submodule "bundle/thrift-syntax"]
 	path = bundle/thrift-syntax
 	url = https://github.com/jigish/vim-thrift.git
