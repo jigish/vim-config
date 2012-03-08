@@ -31,9 +31,6 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = https://github.com/wincent/Command-T.git
-[submodule "bundle/matchit"]
-	path = bundle/matchit
-	url = https://github.com/tsaleh/vim-matchit.git
 [submodule "bundle/lucius-theme"]
 	path = bundle/lucius-theme
 	url = https://github.com/vim-scripts/Lucius.git
@@ -70,9 +67,6 @@
 [submodule "bundle/darkspectrum-theme"]
 	path = bundle/darkspectrum-theme
 	url = https://github.com/vim-scripts/darkspectrum.git
-[submodule "bundle/actionscript-syntax"]
-	path = bundle/actionscript-syntax
-	url = https://github.com/vim-scripts/actionscript.vim.git
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
