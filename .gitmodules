@@ -33,7 +33,7 @@
 	url = https://github.com/wincent/Command-T.git
 [submodule "bundle/matchit"]
 	path = bundle/matchit
-	url = http://github.com/mhz/vim-matchit
+	url = http://github.com/tsaleh/vim-matchit.git
 [submodule "bundle/lucius-theme"]
 	path = bundle/lucius-theme
 	url = http://github.com/vim-scripts/Lucius.git
