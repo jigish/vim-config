@@ -70,8 +70,8 @@
 [submodule "bundle/darkspectrum-theme"]
 	path = bundle/darkspectrum-theme
 	url = https://github.com/vim-scripts/darkspectrum.git
-[submodule "bundle/actionscript"]
-	path = bundle/actionscript
+[submodule "bundle/actionscript-syntax"]
+	path = bundle/actionscript-syntax
 	url = https://github.com/vim-scripts/actionscript.vim.git
 [submodule "bundle/ack"]
 	path = bundle/ack
@@ -94,3 +94,6 @@
 [submodule "bundle/coffeescript-syntax"]
 	path = bundle/coffeescript-syntax
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/scala-syntax"]
+	path = bundle/scala-syntax
+	url = https://github.com/derekwyatt/vim-scala.git
