@@ -94,3 +94,9 @@
 [submodule "bundle/markdown-syntax"]
 	path = bundle/markdown-syntax
 	url = https://github.com/tpope/vim-markdown.git
+[submodule "pathogen"]
+	path = pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule "bundle/coffeescript-syntax"]
+	path = bundle/coffeescript-syntax
+	url = https://github.com/kchmck/vim-coffee-script.git

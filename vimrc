@@ -1,10 +1,7 @@
 " Pathogen
-filetype off
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
-
+call pathogen#infect()
 syntax on
+filetype plugin indent on
 
 " Text Formatting
 set textwidth=110
