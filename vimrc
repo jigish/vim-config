@@ -117,3 +117,6 @@ map <leader>gd :Gdiff<CR>
 " Ack
 map <leader>a :Ack 
 map <leader>f :AckFile 
+
+" ActionScript
+au BufNewFile,BufRead *.as  setf actionscript

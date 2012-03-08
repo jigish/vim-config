@@ -91,3 +91,9 @@
 [submodule "bundle/scala-syntax"]
 	path = bundle/scala-syntax
 	url = https://github.com/derekwyatt/vim-scala.git
+[submodule "bundle/matchit"]
+	path = bundle/matchit
+	url = https://github.com/tsaleh/vim-matchit.git
+[submodule "bundle/actionscript-syntax"]
+	path = bundle/actionscript-syntax
+	url = https://github.com/vim-scripts/actionscript.vim.git
