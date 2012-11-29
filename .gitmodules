@@ -97,3 +97,6 @@
 [submodule "bundle/actionscript-syntax"]
 	path = bundle/actionscript-syntax
 	url = https://github.com/vim-scripts/actionscript.vim.git
+[submodule "bundle/go-syntax"]
+	path = bundle/go-syntax
+	url = https://github.com/jigish/go-syntax.git
