@@ -33,6 +33,12 @@ set linespace=3
 set incsearch
 set shortmess=atI
 
+" Go specific settings
+augroup golang
+  au!
+  au FileType go setlocal noexpandtab
+augroup END
+
 " Ensure the temp dirs exist
 call system("mkdir -p ~/.vim/tmp/swap")
 call system("mkdir -p ~/.vim/tmp/backup")
@@ -74,7 +80,7 @@ set list
 set listchars=tab:▸\ ,eol:¬
 
 " ColorScheme
-set t_Co=16
+set t_Co=256
 set background=dark
 colorscheme lucius
 hi ColorColumn guibg=#363946
