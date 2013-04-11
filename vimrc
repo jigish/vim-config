@@ -1,5 +1,6 @@
 " Pathogen
 call pathogen#infect()
+call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
@@ -59,10 +60,11 @@ nnoremap s i<CR><ESC>==
 nnoremap S d$O<ESC>p==
 
 " Command-T
-map <silent><C-t> :CommandT<CR>
-map <silent><C-b> :CommandTBuffer<CR>
-let g:CommandTMaxFiles=20000
-let g:CommandTMaxDepth=20
+let g:ctrlp_map='<c-t>'
+map <silent><C-b> :CtrlPBuffer<CR>
+let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_max_files=20000
+let g:ctrlp_max_depth=20
 
 " NERDTree
 let g:NERDTreeChDirMode=2
