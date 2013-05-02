@@ -109,7 +109,7 @@ command! DeleteTrailingWhitespace %s:\(\S*\)\s\+$:\1:
 nnoremap <silent><F6> :DeleteTrailingWhitespace<CR>
 
 " Reload files
-nnoremap <silent><F5> :NERDTree<CR>:ClearAllCtrlPCaches<CR>
+nnoremap <silent><F5> :NERDTree<CR>:ClearAllCtrlPCaches<CR>:wincmd l<CR>
 
 " ColorColumn
 function! ToggleColorColumn()
