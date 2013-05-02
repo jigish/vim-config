@@ -51,13 +51,19 @@ set undodir=~/.vim/tmp/undo/
 
 " Mappings
 let mapleader = ","
-nnoremap <C-j> 10j
-nnoremap <C-k> 10k
-nnoremap <C-Down> 10<Down>
-nnoremap <C-Up> 10<Up>
 " Caleb's cool s and S mappings
 nnoremap s i<CR><ESC>==
 nnoremap S d$O<ESC>p==
+
+" Fucking Arrow Keys
+nnoremap <Up> <ESC>
+nnoremap <Down> <ESC>
+nnoremap <Left> <ESC>
+nnoremap <Right> <ESC>
+inoremap <Up> <ESC>
+inoremap <Down> <ESC>
+inoremap <Left> <ESC>
+inoremap <Right> <ESC>
 
 " Command-T
 let g:ctrlp_map='<c-t>'
@@ -98,7 +104,10 @@ autocmd BufWinLeave * call clearmatches()
 
 " A command to delete all trailing whitespace from a file.
 command! DeleteTrailingWhitespace %s:\(\S*\)\s\+$:\1:
-nnoremap <silent><F5> :DeleteTrailingWhitespace<CR>
+nnoremap <silent><F6> :DeleteTrailingWhitespace<CR>
+
+" Reload files
+nnoremap <silent><F5> :NERDTree<CR>:ClearAllCtrlPCaches<CR>
 
 " ColorColumn
 function! ToggleColorColumn()
