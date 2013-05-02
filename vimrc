@@ -76,6 +76,8 @@ let g:ctrlp_max_depth=20
 let g:NERDTreeChDirMode=2
 let g:NERDChristmasTree=1
 nmap <leader>t :NERDTreeToggle<CR>
+" Exit vim if NERDTree is the last window open
+au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Kill Bells
 set vb t_vb=
@@ -137,3 +139,4 @@ map <leader>f :AckFile
 
 " ActionScript
 au BufNewFile,BufRead *.as  setf actionscript
+

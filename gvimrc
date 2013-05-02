@@ -1,5 +1,6 @@
 " Start NERDTree when gVim/MacVim Start
 autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd l
 
 let s:os =  substitute(system('uname'),"\n","","")
 if s:os == "Darwin"
