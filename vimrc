@@ -33,6 +33,7 @@ set backspace=indent,eol,start
 set linespace=3
 set incsearch
 set shortmess=atI
+set completeopt-=preview
 
 " Go specific settings
 augroup golang
@@ -132,6 +133,7 @@ map <leader>gs :Gstatus<CR>
 map <leader>gc :Gcommit<CR>
 map <leader>gp :Git push<CR>
 map <leader>gd :Gdiff<CR>
+nnoremap <leader>gD <c-w>h<c-w>c
 
 " Ack
 map <leader>a :Ack 
