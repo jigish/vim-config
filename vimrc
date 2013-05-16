@@ -25,7 +25,14 @@ set ts=2
 set sw=2
 set sts=2
 set laststatus=2
-set statusline=%{fugitive#statusline()}\ %<%F%h%m%r%h%w%y\ [%{&ff}]\ [%{strftime(\"%c\",getftime(expand(\"%:p\")))}]%=\ [%l\/%L\:%c%V\ %o]\ [ascii:%b]\ [%P]
+set encoding=utf-8
+set rtp+=/usr/local/powerline/powerline/bindings/vim
+let s:os =  substitute(system('uname'),"\n","","")
+if s:os == "Darwin"
+  set guifont=Inconsolata\ For\ Powerline:h12
+else
+  set guifont="Inconsolata\ For\ Powerline 12"
+endif
 set ignorecase
 set smartcase
 set undofile
@@ -132,6 +139,7 @@ map <leader>l :TlistToggle<CR>
 map <leader>gs :Gstatus<CR>
 map <leader>gc :Gcommit<CR>
 map <leader>gp :Git push<CR>
+map <leader>gl :Git pull<CR>
 map <leader>gd :Gdiff<CR>
 nnoremap <leader>gD <c-w>h<c-w>c
 
@@ -142,3 +150,8 @@ map <leader>f :AckFile
 " ActionScript
 au BufNewFile,BufRead *.as  setf actionscript
 
+" Make
+nnoremap <leader>mm :!make<CR>
+nnoremap <leader>mc :!make clean<CR>
+nnoremap <leader>mt :!make test<CR>
+nnoremap <leader>mo :!make test 
