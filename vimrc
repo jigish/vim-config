@@ -154,4 +154,5 @@ au BufNewFile,BufRead *.as  setf actionscript
 nnoremap <leader>mm :!make<CR>
 nnoremap <leader>mc :!make clean<CR>
 nnoremap <leader>mt :!make test<CR>
-nnoremap <leader>mo :!make test 
+nnoremap <leader>mf :!make fmt<CR>
+nnoremap <leader>mp :!TEST_PACKAGE=`echo "%:p:h" \| sed 's-.*/src/\(.*\)-\1-'` make test<CR>
