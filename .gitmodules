@@ -28,9 +28,6 @@
 [submodule "bundle/ruby"]
 	path = bundle/ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
-[submodule "bundle/lucius-theme"]
-	path = bundle/lucius-theme
-	url = https://github.com/vim-scripts/Lucius.git
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
