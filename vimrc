@@ -115,7 +115,7 @@ command! DeleteTrailingWhitespace %s:\(\S*\)\s\+$:\1:
 nnoremap <silent><F6> :DeleteTrailingWhitespace<CR>
 
 " Reload files
-nnoremap <silent><F5> :NERDTree<CR>:ClearAllCtrlPCaches<CR>:wincmd l<CR>
+nnoremap <silent><F5> :NERDTree<CR>:ClearAllCtrlPCaches<CR>:NERDTreeToggle<CR>
 
 " ColorColumn
 function! ToggleColorColumn()
@@ -139,6 +139,8 @@ map <leader>gc :Gcommit<CR>
 map <leader>gp :Git push<CR>
 map <leader>gl :Git pull<CR>
 map <leader>gd :Gdiff<CR>
+map <leader>gb :Gblame<CR>
+map <leader>ga :Git add .<CR>
 nnoremap <leader>gD <c-w>h<c-w>c
 
 " Ack
@@ -149,8 +151,11 @@ map <leader>f :AckFile
 au BufNewFile,BufRead *.as  setf actionscript
 
 " Make
-nnoremap <leader>mm :!make<CR>
+nnoremap <leader>mm :make<CR>
 nnoremap <leader>mc :!make clean<CR>
 nnoremap <leader>mt :!make test<CR>
 nnoremap <leader>mf :!make fmt<CR>
 nnoremap <leader>mp :!TEST_PACKAGE=`echo "%:p:h" \| sed 's-.*/src/\(.*\)-\1-'` make test<CR>
+
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
