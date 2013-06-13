@@ -151,11 +151,11 @@ map <leader>f :AckFile
 au BufNewFile,BufRead *.as  setf actionscript
 
 " Make
-nnoremap <leader>mm :make<CR>
-nnoremap <leader>mc :!make clean<CR>
-nnoremap <leader>mt :!make test<CR>
-nnoremap <leader>mf :!make fmt<CR>
-nnoremap <leader>mp :!TEST_PACKAGE=`echo "%:p:h" \| sed 's-.*/src/\(.*\)-\1-'` make test<CR>
+nnoremap <leader>mm :wa<CR>:make<CR>
+nnoremap <leader>mc :wa<CR>:!make clean<CR>
+nnoremap <leader>mt :wa<CR>:!make test<CR>
+nnoremap <leader>mf :wa<CR>:!make fmt<CR>
+nnoremap <leader>mp :wa<CR>:!TEST_PACKAGE=`echo "%:p:h" \| sed 's-.*/src/\(.*\)-\1-'` make test<CR>
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
