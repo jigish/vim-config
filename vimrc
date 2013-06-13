@@ -26,11 +26,11 @@ set sw=2
 set sts=2
 set laststatus=2
 set encoding=utf-8
-if has("gui_running")
+"if has("gui_running")
   set rtp+=/usr/local/powerline/powerline/bindings/vim
-else
-  set statusline=%{fugitive#statusline()}\ %<%F%h%m%r%h%w%y\ [%{&ff}]\ [%{strftime(\"%c\",getftime(expand(\"%:p\")))}]%=\ [%l\/%L\:%c%V\ %o]\ [ascii:%b]\ [%P]
-endif
+"else
+"  set statusline=%{fugitive#statusline()}\ %<%F%h%m%r%h%w%y\ [%{&ff}]\ [%{strftime(\"%c\",getftime(expand(\"%:p\")))}]%=\ [%l\/%L\:%c%V\ %o]\ [ascii:%b]\ [%P]
+"endif
 set ignorecase
 set smartcase
 set undofile
