@@ -144,8 +144,9 @@ map <leader>ga :Git add .<CR>
 nnoremap <leader>gD <c-w>h<c-w>c
 
 " Ack
-map <leader>a :Ack 
-map <leader>f :AckFile 
+map <leader>aw yiw:Ack <c-r>0<CR>
+map <leader>aa :Ack 
+map <leader>af :AckFile 
 
 " ActionScript
 au BufNewFile,BufRead *.as  setf actionscript

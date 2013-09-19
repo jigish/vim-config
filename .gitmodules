@@ -76,3 +76,6 @@
 [submodule "bundle/lucius"]
 	path = bundle/lucius
 	url = https://github.com/jonathanfilip/vim-lucius
+[submodule "bundle/toml-syntax"]
+	path = bundle/toml-syntax
+	url = https://github.com/cespare/vim-toml
