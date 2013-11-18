@@ -26,6 +26,7 @@ set sw=2
 set sts=2
 set laststatus=2
 set encoding=utf-8
+set tags+=.tags
 "if has("gui_running")
   set rtp+=/usr/local/powerline/powerline/bindings/vim
 "else
@@ -71,9 +72,11 @@ inoremap <Down> <ESC>
 inoremap <Left> <ESC>
 inoremap <Right> <ESC>
 
-" Command-T
-let g:ctrlp_map='<c-t>'
-map <silent><C-b> :CtrlPBuffer<CR>
+" Ctrl-P
+let g:ctrlp_map='<c-y>'
+nnoremap <silent><C-t> :CtrlP pwd<CR>
+nnoremap <silent><C-b> :CtrlPBuffer<CR>
+nnoremap <silent><C-p> :CtrlPTag<CR>
 let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_max_files=20000
 let g:ctrlp_max_depth=20
@@ -115,7 +118,7 @@ command! DeleteTrailingWhitespace %s:\(\S*\)\s\+$:\1:
 nnoremap <silent><F6> :DeleteTrailingWhitespace<CR>
 
 " Reload files
-nnoremap <silent><F5> :NERDTree<CR>:ClearAllCtrlPCaches<CR>:NERDTreeToggle<CR>
+nnoremap <silent><F5> :!/usr/local/bin/ctags -f .tags -R . &<CR><CR>:NERDTree<CR>:ClearAllCtrlPCaches<CR>:NERDTreeToggle<CR>
 
 " ColorColumn
 function! ToggleColorColumn()
@@ -129,9 +132,6 @@ endfunction
 command! ToggleColorColumn call ToggleColorColumn()
 map <leader>c :ToggleColorColumn<CR>
 call ToggleColorColumn()
-
-" TagList
-map <leader>l :TlistToggle<CR>
 
 " Fugitive
 map <leader>gs :Gstatus<CR>
@@ -147,6 +147,15 @@ nnoremap <leader>gD <c-w>h<c-w>c
 map <leader>aw yiw:Ack <c-r>0<CR>
 map <leader>aa :Ack 
 map <leader>af :AckFile 
+
+" Ctags
+map <leader>tw yiw:tag <c-r>0<CR>
+map <leader>ts :ts<CR>
+map <leader>tn :tn<CR>
+map <leader>tp :tp<CR>
+map <leader>tf :tf<CR>
+map <leader>tl :tl<CR>
+map <leader>tt :pop<CR>
 
 " ActionScript
 au BufNewFile,BufRead *.as  setf actionscript
