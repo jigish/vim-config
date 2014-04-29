@@ -41,6 +41,9 @@ set incsearch
 set shortmess=atI
 set completeopt-=preview
 
+" airline
+let g:airline_powerline_fonts = 1
+
 " Go specific settings
 augroup golang
   au!
