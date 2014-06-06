@@ -146,7 +146,10 @@ map <leader>gb :Gblame<CR>
 map <leader>ga :Git add .<CR>
 nnoremap <leader>gD <c-w>h<c-w>c
 
-" Ack
+" Ag (better than Ack)
+if executable("ag")
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
 map <leader>aw yiw:Ack <c-r>0<CR>
 map <leader>aa :Ack 
 map <leader>af :AckFile 
@@ -169,6 +172,12 @@ nnoremap <leader>mc :wa<CR>:!make clean<CR>
 nnoremap <leader>mt :wa<CR>:!make test<CR>
 nnoremap <leader>mf :wa<CR>:!make fmt<CR>
 nnoremap <leader>mp :wa<CR>:!TEST_PACKAGE=`echo "%:p:h" \| sed 's-.*/src/\(.*\)-\1-'` make test<CR>
+"hello"
+" Rake
+nnoremap <leader>rt :wa<CR>:!rake test<CR>
+nnoremap <leader>rf :wa<CR>:!rake test SPEC=`echo "%:p"`<CR>
+nnoremap <leader>r' yi':wa<CR>:!rake test SPEC=`echo "%:p"` SPEC_OPTS="-e \"<c-r>0\""<CR>
+nnoremap <leader>r" yi":wa<CR>:!rake test SPEC=`echo "%:p"` SPEC_OPTS="-e \"<c-r>0\""<CR>
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
