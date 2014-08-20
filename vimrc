@@ -182,11 +182,11 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#disable_auto_complete = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+"let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+"if !exists('g:neocomplete#keyword_patterns')
+    "let g:neocomplete#keyword_patterns = {}
+"endif
+"let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 inoremap <expr><C-g>     neocomplete#undo_completion()
 "inoremap <expr><C-l>     neocomplete#complete_common_string()
 inoremap <C-l> <C-x><C-u>
