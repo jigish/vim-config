@@ -31,10 +31,13 @@ set ignorecase
 set smartcase
 set undofile
 set backspace=indent,eol,start
-set linespace=3
+set linespace=1
 set incsearch
 set shortmess=atI
 set completeopt-=preview
+
+" bind :W to :w
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
 " airline
 let g:airline_powerline_fonts = 1
