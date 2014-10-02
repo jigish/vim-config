@@ -81,6 +81,9 @@ nnoremap <silent><C-p> :CtrlPTag<CR>
 let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_max_files=20000
 let g:ctrlp_max_depth=20
+if executable("ag")
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " NERDTree
 let g:NERDTreeChDirMode=2
