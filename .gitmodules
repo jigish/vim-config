@@ -80,7 +80,7 @@
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
 [submodule "bundle/numbers"]
-	path = bundle/numbers
+	path = bundle.unused/numbers
 	url = https://github.com/myusuf3/numbers.vim
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
