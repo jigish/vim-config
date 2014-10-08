@@ -91,3 +91,6 @@
 [submodule "bundle/airline"]
 	path = bundle/airline
 	url = https://github.com/bling/vim-airline
+[submodule "bundle/multiple-cursors"]
+	path = bundle/multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors
