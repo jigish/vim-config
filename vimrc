@@ -11,6 +11,15 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
@@ -26,6 +35,7 @@ NeoBundle 'tmhedberg/matchit'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'vim-scripts/AnsiEsc.vim'
 " Lazy load shit because I don't always use them
 NeoBundleLazy 'scrooloose/nerdtree'
 NeoBundleLazy 'majutsushi/tagbar'
@@ -74,6 +84,10 @@ set completeopt-=preview
 
 " bind :W to :w
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+
+" vimproc > !
+nnoremap ! :VimProcBang 
+
 
 " airline
 let g:airline_powerline_fonts = 1
@@ -159,7 +173,7 @@ command! DeleteTrailingWhitespace %s:\(\S*\)\s\+$:\1:
 nnoremap <silent><F6> :DeleteTrailingWhitespace<CR>
 
 " Reload files
-nnoremap <silent><F5> :!/usr/local/bin/ctags -f .tags -R . &<CR><CR>:NERDTree<CR>:ClearAllCtrlPCaches<CR>:NERDTreeToggle<CR>
+nnoremap <silent><F5> :VimProcBang /usr/local/bin/ctags -f .tags -R . &<CR><CR>:NERDTree<CR>:ClearAllCtrlPCaches<CR>:NERDTreeToggle<CR>
 
 " ColorColumn
 function! ToggleColorColumn()
@@ -208,17 +222,15 @@ nmap <leader>tb :NeoBundleSource tagbar<CR>:TagbarToggle<CR>
 au BufNewFile,BufRead *.as  setf actionscript
 
 " Make
-nnoremap <leader>mm :wa<CR>:make<CR>
-nnoremap <leader>mc :wa<CR>:!make clean<CR>
-nnoremap <leader>mt :wa<CR>:!make test<CR>
-nnoremap <leader>mf :wa<CR>:!make fmt<CR>
-nnoremap <leader>mp :wa<CR>:!TEST_PACKAGE=`echo "%:p:h" \| sed 's-.*/src/\(.*\)-\1-'` make test<CR>
+nnoremap <leader>mm :wa<CR>:VimProcBang make<CR>
+nnoremap <leader>mc :wa<CR>:VimProcBang make clean<CR>
+nnoremap <leader>mt :wa<CR>:VimProcBang make test<CR>
+nnoremap <leader>mf :wa<CR>:VimProcBang make fmt<CR>
 
 " Rake
-nnoremap <leader>rt :wa<CR>:!rake test<CR>
-nnoremap <leader>rf :wa<CR>:!rake test SPEC=`echo "%:p"`<CR>
-nnoremap <leader>r' yi':wa<CR>:!rake test SPEC=`echo "%:p"` SPEC_OPTS="-e \"<c-r>0\""<CR>
-nnoremap <leader>r" yi":wa<CR>:!rake test SPEC=`echo "%:p"` SPEC_OPTS="-e \"<c-r>0\""<CR>
+nnoremap <leader>rt :wa<CR>:VimProcBang rake test SPEC_OPTS="--no-color"<CR>
+nnoremap <leader>rf :wa<CR>:VimProcBang rspec --no-color <c-r>%<CR>
+nnoremap <leader>rl :wa<CR>:VimProcBang rspec --no-color <c-r>%:<c-r>=line(".")<CR><CR>
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
