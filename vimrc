@@ -1,10 +1,44 @@
-" Pathogen
-call pathogen#infect()
-call pathogen#helptags()
-syntax on
+" Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
+
+" NeoBundle
+if has('vim_starting')
+  set nocompatible " Be iMproved
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-ragtag'
+NeoBundle 'tpope/vim-git'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'jonathanfilip/vim-lucius'
+NeoBundle 'tmhedberg/matchit'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'vim-scripts/taglist.vim'
+" Lazy load shit because I don't always use them
+NeoBundleLazy 'scrooloose/nerdtree'
+NeoBundleLazy 'majutsushi/tagbar'
+NeoBundleLazy 'vim-ruby/vim-ruby'
+autocmd FileType rb,erb,ru NeoBundleSource vim-ruby
+" NeoBundle 'myusuf3/numbers.vim' " unused because it is slow
+
+call neobundle#end()
 filetype plugin indent on
+NeoBundleCheck
 
 " Text Formatting
+syntax on
 set textwidth=110
 let &wrapmargin= &textwidth
 set formatoptions=croql
@@ -88,7 +122,7 @@ endif
 " NERDTree
 let g:NERDTreeChDirMode=2
 let g:NERDChristmasTree=1
-nmap <leader>t :NERDTreeToggle<CR>
+nmap <leader>t :NeoBundleSource nerdtree<CR>:NERDTreeToggle<CR>
 " Exit vim if NERDTree is the last window open
 au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -165,7 +199,7 @@ map <leader>tl :tl<CR>
 map <leader>tt :pop<CR>
 
 " Tagbar
-nmap <leader>tb :TagbarToggle<CR>
+nmap <leader>tb :NeoBundleSource tagbar<CR>:TagbarToggle<CR>
 
 " ActionScript
 au BufNewFile,BufRead *.as  setf actionscript
