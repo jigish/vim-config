@@ -30,7 +30,9 @@ NeoBundle 'vim-scripts/taglist.vim'
 NeoBundleLazy 'scrooloose/nerdtree'
 NeoBundleLazy 'majutsushi/tagbar'
 NeoBundleLazy 'vim-ruby/vim-ruby'
-autocmd FileType rb,erb,ru NeoBundleSource vim-ruby
+autocmd FileType ruby,rb,erb,ru NeoBundleSource vim-ruby
+NeoBundleLazy 'fatih/vim-go'
+autocmd FileType go NeoBundleSource vim-go
 " NeoBundle 'myusuf3/numbers.vim' " unused because it is slow
 
 call neobundle#end()
@@ -80,6 +82,7 @@ let g:airline_powerline_fonts = 1
 augroup golang
   au!
   au FileType go setlocal noexpandtab
+  au FileType go let $GOPATH = '.:./vendor' " most of my go projects use this structure
 augroup END
 
 " Ensure the temp dirs exist
