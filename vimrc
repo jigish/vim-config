@@ -82,8 +82,10 @@ set incsearch
 set shortmess=atI
 set completeopt-=preview
 
-" bind :W to :w
+" my fingers are slow. bind :W to :w & :Wq to :wq & :Wa to :wa
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))
+cnoreabbrev <expr> Wa ((getcmdtype() is# ':' && getcmdline() is# 'Wa')?('wa'):('Wa'))
 
 " vimproc > !
 nnoremap ! :VimProcBang 
@@ -113,6 +115,10 @@ let mapleader = ","
 " Caleb's cool s and S mappings
 nnoremap s i<CR><ESC>==
 nnoremap S d$O<ESC>p==
+
+" yank to and paste from clipboard
+vnoremap <leader>yc "*y
+nnoremap <leader>yv "*p
 
 " Fucking Arrow Keys
 nnoremap <Up> <ESC>
