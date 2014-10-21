@@ -98,7 +98,7 @@ let g:airline_powerline_fonts = 1
 augroup golang
   au!
   au FileType go setlocal noexpandtab
-  au FileType go let $GOPATH = '.:./vendor' " most of my go projects use this structure
+  au FileType go let $GOPATH = getcwd() . ':' . getcwd() . '/vendor' " most of my go projects use this structure
 augroup END
 
 " Ensure the temp dirs exist
