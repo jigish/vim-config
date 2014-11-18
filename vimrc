@@ -20,6 +20,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 \     'unix' : 'gmake',
 \    },
 \ }
+NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
@@ -237,6 +238,9 @@ nnoremap <leader>mf :wa<CR>:VimProcBang make fmt<CR>
 nnoremap <leader>rt :wa<CR>:VimProcBang rake test SPEC_OPTS="--no-color"<CR>
 nnoremap <leader>rf :wa<CR>:VimProcBang rspec --no-color <c-r>%<CR>
 nnoremap <leader>rl :wa<CR>:VimProcBang rspec --no-color <c-r>%:<c-r>=line(".")<CR><CR>
+
+" Exec
+nnoremap <leader>ee ^y$:VimProcBang <c-r>0<CR>
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
