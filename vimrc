@@ -37,6 +37,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
+NeoBundle 'vim-scripts/LargeFile'
 " Lazy load shit because I don't always use them
 NeoBundleLazy 'scrooloose/nerdtree'
 NeoBundleLazy 'majutsushi/tagbar'
