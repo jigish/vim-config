@@ -28,7 +28,6 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'tpope/vim-git'
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'jonathanfilip/vim-lucius'
@@ -44,6 +43,8 @@ NeoBundleLazy 'scrooloose/nerdtree'
 NeoBundleLazy 'majutsushi/tagbar'
 NeoBundleLazy 'vim-ruby/vim-ruby'
 autocmd FileType ruby,rb,erb,ru NeoBundleSource vim-ruby
+NeoBundleLazy 'scrooloose/syntastic'
+autocmd FileType ruby,rb,erb,ru NeoBundleSource syntastic
 NeoBundleLazy 'fatih/vim-go'
 autocmd FileType go NeoBundleSource vim-go
 " NeoBundle 'myusuf3/numbers.vim' " unused because it is slow
@@ -231,7 +232,7 @@ nmap <leader>tb :NeoBundleSource tagbar<CR>:TagbarToggle<CR>
 au BufNewFile,BufRead *.as  setf actionscript
 
 " Make
-nnoremap <leader>mm :wa<CR>:VimProcBang make<CR>
+nnoremap <leader>mm :wa<CR>:!make<CR>
 nnoremap <leader>mc :wa<CR>:VimProcBang make clean<CR>
 nnoremap <leader>mt :wa<CR>:VimProcBang make test<CR>
 nnoremap <leader>mf :wa<CR>:VimProcBang make fmt<CR>
@@ -243,6 +244,16 @@ nnoremap <leader>rl :wa<CR>:VimProcBang rspec --no-color <c-r>%:<c-r>=line(".")<
 
 " Exec
 nnoremap <leader>ee ^y$:VimProcBang <c-r>0<CR>
+
+" ruby-specific
+" convert strings to symbols and visa-versa
+nnoremap <leader>sw" :silent! normal ds"<ESC>i:<ESC>
+nnoremap <leader>sw' :silent! normal ds'<ESC>i:<ESC>
+nnoremap <leader>ss" :silent! normal ysiw"<ESC>:silent! normal hx<ESC>
+nnoremap <leader>ss' :silent! normal ysiw'<ESC>:silent! normal hx<ESC>
+
+" underscore to camelcase
+vmap <leader>c :s-_\([a-z]\)-\U\1-g<CR>
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
