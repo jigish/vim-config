@@ -98,6 +98,7 @@ nnoremap ! :VimProcBang
 
 " airline
 let g:airline_powerline_fonts = 1
+let g:airline_theme='lucius'
 
 " Go specific settings
 augroup golang
@@ -168,7 +169,13 @@ set listchars=tab:▸\ ,eol:¬
 set t_Co=256
 set background=dark
 colorscheme lucius
+let g:lucius_no_term_bg=1
 hi ColorColumn guibg=#363946
+hi SignColumn  ctermbg=bg
+hi link GitGutterAdd          PreProc
+hi link GitGutterChange       Statement
+hi link GitGutterDelete       Special
+hi link GitGutterChangeDelete Constant
 
 " Show extra whitespace
 hi ExtraWhitespace guibg=#CCCCCC
