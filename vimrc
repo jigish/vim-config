@@ -27,6 +27,7 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'tpope/vim-git'
+NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'kien/ctrlp.vim'
@@ -207,6 +208,9 @@ map <leader>gd :Gdiff<CR>
 map <leader>gb :Gblame<CR>
 map <leader>ga :Git add .<CR>
 nnoremap <leader>gD <c-w>h<c-w>c
+
+" Git Gutter
+map <leader>gg :GitGutterToggle<CR>
 
 " Ag (better than Ack)
 if executable("ag")
