@@ -9,7 +9,7 @@ set go-=L
 " Font
 let s:os =  substitute(system('uname'),"\n","","")
 if s:os == "Darwin"
-  set guifont=Inconsolata\ For\ Powerline:h12
+  set guifont=Input:h10
 else
-  set guifont="Inconsolata\ For\ Powerline 12"
+  set guifont="Input 10"
 endif
