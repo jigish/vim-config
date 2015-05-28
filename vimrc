@@ -225,6 +225,7 @@ if executable("ag")
 endif
 map <leader>aw yiw:Ack <c-r>0<CR>
 map <leader>aa :Ack 
+map <leader>as :Ack -s 
 map <leader>af :AckFile 
 
 " Ctags
