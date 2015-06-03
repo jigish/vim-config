@@ -1,3 +1,5 @@
 tmp/*
 .netrwhist
 bundle/*
+eclim
+plugin/eclim.vim
