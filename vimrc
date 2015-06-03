@@ -170,8 +170,8 @@ set t_Co=256
 set background=dark
 colorscheme lucius
 let g:lucius_no_term_bg=1
-hi ColorColumn guibg=#363946
-hi SignColumn  ctermbg=bg
+let g:gitgutter_override_sign_column_highlight=0
+hi SignColumn ctermbg=bg
 hi link GitGutterAdd          PreProc
 hi link GitGutterChange       Statement
 hi link GitGutterDelete       Special
