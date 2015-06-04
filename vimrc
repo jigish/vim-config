@@ -228,7 +228,14 @@ map <leader>aa :Ack
 map <leader>as :Ack -s 
 map <leader>af :AckFile 
 
-" Ctags
+" eclim
+au BufEnter *.java map <leader>tw :JavaSearch<CR>
+au BufEnter *.scala map <leader>tw :ScalaSearch<CR>
+au BufLeave *.java,*.scala map <leader>tw yiw:tag <c-r>0<CR>
+let g:EclimJavaSearchSingleResult='edit'
+let g:EclimScalaSearchSingleResult='edit'
+
+" ctags
 map <leader>tw yiw:tag <c-r>0<CR>
 map <leader>ts :ts<CR>
 map <leader>tn :tn<CR>
@@ -239,9 +246,6 @@ map <leader>tt :pop<CR>
 
 " Tagbar
 nmap <leader>tb :NeoBundleSource tagbar<CR>:TagbarToggle<CR>
-
-" ActionScript
-au BufNewFile,BufRead *.as  setf actionscript
 
 " Make
 nnoremap <leader>mm :wa<CR>:!make<CR>
@@ -266,6 +270,9 @@ nnoremap <leader>ss' :silent! normal ysiw'<ESC>:silent! normal hx<ESC>
 
 " underscore to camelcase
 vmap <leader>c :s-_\([a-z]\)-\U\1-g<CR>
+
+" buffer management
+nnoremap <leader>bd :bdelete<CR>
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
