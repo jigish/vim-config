@@ -32,6 +32,7 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'jonathanfilip/vim-lucius'
+NeoBundle 'gregsexton/Muon'
 NeoBundle 'tmhedberg/matchit'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'terryma/vim-multiple-cursors'
@@ -97,7 +98,7 @@ nnoremap ! :VimProcBang
 
 
 " airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
 let g:airline_theme='lucius'
 
 " Go specific settings
@@ -141,11 +142,14 @@ let g:ctrlp_map='<c-y>'
 nnoremap <silent><C-t> :CtrlP pwd<CR>
 nnoremap <silent><C-b> :CtrlPBuffer<CR>
 nnoremap <silent><C-p> :CtrlPTag<CR>
-let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore={
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(so|class)$',
+  \ }
 let g:ctrlp_max_files=20000
 let g:ctrlp_max_depth=20
 if executable("ag")
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s --ignore "*.class" -l --nocolor -g ""'
 endif
 
 " NERDTree
@@ -168,14 +172,13 @@ set listchars=tab:▸\ ,eol:¬
 " ColorScheme
 set t_Co=256
 set background=dark
-colorscheme lucius
-let g:lucius_no_term_bg=1
+colorscheme muon
 let g:gitgutter_override_sign_column_highlight=0
 hi SignColumn ctermbg=bg
-hi link GitGutterAdd          PreProc
+hi link GitGutterAdd          Special
 hi link GitGutterChange       Statement
-hi link GitGutterDelete       Special
-hi link GitGutterChangeDelete Constant
+hi link GitGutterDelete       String
+hi link GitGutterChangeDelete PreProc
 
 " Show extra whitespace
 hi ExtraWhitespace guibg=#CCCCCC
@@ -218,6 +221,7 @@ nnoremap <leader>gD <c-w>h<c-w>c
 
 " Git Gutter
 map <leader>gg :GitGutterToggle<CR>
+map <leader>gr :GitGutterToggle<CR>:GitGutterToggle<CR>
 
 " Ag (better than Ack)
 if executable("ag")
@@ -234,6 +238,7 @@ au BufEnter *.scala map <leader>tw :ScalaSearch<CR>
 au BufLeave *.java,*.scala map <leader>tw yiw:tag <c-r>0<CR>
 let g:EclimJavaSearchSingleResult='edit'
 let g:EclimScalaSearchSingleResult='edit'
+map <leader>er :ProjectDelete <c-r>=expand('%:p:h:t')<CR><CR>:ProjectImport .<CR>:ProjectOpen<CR>
 
 " ctags
 map <leader>tw yiw:tag <c-r>0<CR>
