@@ -168,17 +168,20 @@ endif
 " Visual Options
 set list
 set listchars=tab:▸\ ,eol:¬
-
 " ColorScheme
 set t_Co=256
 set background=dark
 colorscheme muon
+" fix NonText and (equivalent to Comment)
+hi NonText ctermfg=240 ctermbg=234 gui=None guifg=#585858 guibg=#1c1c1c
+" fox sign column colors
 let g:gitgutter_override_sign_column_highlight=0
-hi SignColumn ctermbg=bg
-hi link GitGutterAdd          Special
-hi link GitGutterChange       Statement
-hi link GitGutterDelete       String
-hi link GitGutterChangeDelete PreProc
+hi SignColumn            ctermbg=bg
+hi GitGutterAdd          ctermfg=086
+hi GitGutterChange       ctermfg=214
+hi GitGutterDelete       ctermfg=161
+hi GitGutterChangeDelete ctermfg=214
+
 
 " Show extra whitespace
 hi ExtraWhitespace guibg=#CCCCCC
