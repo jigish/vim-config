@@ -99,14 +99,6 @@ nnoremap ! :VimProcBang
 
 " airline
 let g:airline_powerline_fonts=1
-let g:airline_theme='lucius'
-
-" Go specific settings
-augroup golang
-  au!
-  au FileType go setlocal noexpandtab
-  au FileType go let $GOPATH = getcwd() . ':' . getcwd() . '/vendor' " most of my go projects use this structure
-augroup END
 
 " Ensure the temp dirs exist
 call system("mkdir -p ~/.vim/tmp/swap")
@@ -168,12 +160,15 @@ endif
 " Visual Options
 set list
 set listchars=tab:▸\ ,eol:¬
+
 " ColorScheme
 set t_Co=256
 set background=dark
 colorscheme muon
-" fix NonText and (equivalent to Comment)
+let g:airline_theme='raven'
+" fix NonText and SpecialKey (equivalent to Comment)
 hi NonText ctermfg=240 ctermbg=234 gui=None guifg=#585858 guibg=#1c1c1c
+hi SpecialKey ctermfg=240 ctermbg=234 gui=None guifg=#585858 guibg=#1c1c1c
 " fox sign column colors
 let g:gitgutter_override_sign_column_highlight=0
 hi SignColumn            ctermbg=bg
@@ -182,10 +177,9 @@ hi GitGutterChange       ctermfg=214
 hi GitGutterDelete       ctermfg=161
 hi GitGutterChangeDelete ctermfg=214
 
-
 " Show extra whitespace
 hi ExtraWhitespace guibg=#CCCCCC
-hi ExtraWhitespace ctermbg=7
+hi ExtraWhitespace ctermbg=161
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
@@ -197,7 +191,7 @@ command! DeleteTrailingWhitespace %s:\(\S*\)\s\+$:\1:
 nnoremap <silent><F6> :DeleteTrailingWhitespace<CR>
 
 " Reload files
-nnoremap <silent><F5> :VimProcBang /usr/local/bin/ctags -f .tags -R . &<CR><CR>:NERDTree<CR>:ClearAllCtrlPCaches<CR>:NERDTreeToggle<CR>
+nnoremap <silent><F5> :VimProcBang ~/bin/ctags -f .tags -R . &<CR><CR>:NERDTree<CR>:ClearAllCtrlPCaches<CR>:NERDTreeToggle<CR>
 
 " ColorColumn
 function! ToggleColorColumn()
@@ -256,10 +250,16 @@ map <leader>tt :pop<CR>
 nmap <leader>tb :NeoBundleSource tagbar<CR>:TagbarToggle<CR>
 
 " Make
-nnoremap <leader>mm :wa<CR>:!make<CR>
+nnoremap <leader>mm :wa<CR>:make<CR>
 nnoremap <leader>mc :wa<CR>:VimProcBang make clean<CR>
 nnoremap <leader>mt :wa<CR>:VimProcBang make test<CR>
 nnoremap <leader>mf :wa<CR>:VimProcBang make fmt<CR>
+
+" Go specific settings
+augroup golang
+  au!
+  au FileType go setlocal noexpandtab
+augroup END
 
 " Rake
 nnoremap <leader>rt :wa<CR>:VimProcBang rake test SPEC_OPTS="--no-color"<CR>
