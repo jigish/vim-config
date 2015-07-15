@@ -40,6 +40,7 @@ NeoBundle 'saltstack/salt-vim'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'vim-scripts/LargeFile'
+NeoBundle 'docker/docker' , {'rtp': 'contrib/syntax/vim/'}
 " Lazy load shit because I don't always use them
 NeoBundleLazy 'scrooloose/nerdtree'
 NeoBundleLazy 'majutsushi/tagbar'
@@ -175,7 +176,7 @@ hi SignColumn            ctermbg=bg
 hi GitGutterAdd          ctermfg=086
 hi GitGutterChange       ctermfg=214
 hi GitGutterDelete       ctermfg=161
-hi GitGutterChangeDelete ctermfg=214
+hi GitGutterChangeDelete ctermfg=166
 
 " Show extra whitespace
 hi ExtraWhitespace guibg=#CCCCCC
@@ -281,6 +282,7 @@ vmap <leader>c :s-_\([a-z]\)-\U\1-g<CR>
 
 " buffer management
 nnoremap <leader>bd :bdelete<CR>
+nnoremap <leader>bc :bdelete<CR>
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
