@@ -50,6 +50,8 @@ NeoBundleLazy 'scrooloose/syntastic'
 autocmd FileType ruby,rb,erb,ru NeoBundleSource syntastic
 NeoBundleLazy 'fatih/vim-go'
 autocmd FileType go NeoBundleSource vim-go
+NeoBundleLazy 'tfnico/vim-gradle'
+autocmd FileType gradle NeoBundleSource vim-gradle
 " NeoBundle 'myusuf3/numbers.vim' " unused because it is slow
 
 call neobundle#end()
