@@ -91,8 +91,9 @@ set incsearch
 set shortmess=atI
 set completeopt-=preview
 
-" my fingers are slow. bind :W to :w & :Wq to :wq & :Wa to :wa
+" my fingers are slow. bind :W to :w & :Q to :q & :Wq to :wq & :Wa to :wa
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))
 cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))
 cnoreabbrev <expr> Wa ((getcmdtype() is# ':' && getcmdline() is# 'Wa')?('wa'):('Wa'))
 
