@@ -145,7 +145,9 @@ let g:ctrlp_custom_ignore={
   \ }
 let g:ctrlp_max_files=20000
 let g:ctrlp_max_depth=20
-if executable("ag")
+if executable("pt")
+  let g:ctrlp_user_command = 'pt %s --ignore "*.class" -l --nocolor -g ""'
+elseif executable("ag")
   let g:ctrlp_user_command = 'ag %s --ignore "*.class" -l --nocolor -g ""'
 endif
 
@@ -225,8 +227,10 @@ nnoremap <leader>gD <c-w>h<c-w>c
 map <leader>gg :GitGutterToggle<CR>
 map <leader>gr :GitGutterToggle<CR>:GitGutterToggle<CR>
 
-" Ag (better than Ack)
-if executable("ag")
+" Pt > Ag > Ack
+if executable("pt")
+  let g:ackprg = 'pt --nogroup --nocolor --column'
+elseif executable("ag")
   let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 map <leader>aw yiw:Ack <c-r>0<CR>
