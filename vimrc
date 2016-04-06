@@ -20,6 +20,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 \     'unix' : 'gmake',
 \    },
 \ }
+NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
@@ -41,6 +42,7 @@ NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'vim-scripts/LargeFile'
 NeoBundle 'docker/docker' , {'rtp': 'contrib/syntax/vim/'}
+NeoBundle 'jsx/jsx.vim'
 " Lazy load shit because I don't always use them
 NeoBundleLazy 'scrooloose/nerdtree'
 NeoBundleLazy 'majutsushi/tagbar'
@@ -99,7 +101,6 @@ cnoreabbrev <expr> Wa ((getcmdtype() is# ':' && getcmdline() is# 'Wa')?('wa'):('
 
 " vimproc > !
 nnoremap ! :VimProcBang 
-
 
 " airline
 let g:airline_powerline_fonts=1
@@ -239,7 +240,12 @@ au BufEnter *.scala map <leader>tw :ScalaSearch<CR>
 au BufLeave *.java,*.scala map <leader>tw yiw:tag <c-r>0<CR>
 let g:EclimJavaSearchSingleResult='edit'
 let g:EclimScalaSearchSingleResult='edit'
+let g:EclimCompletionMethod = 'omnifunc'
 map <leader>er :ProjectDelete <c-r>=expand('%:p:h:t')<CR><CR>:ProjectImport .<CR>:ProjectOpen<CR>
+vnoremap <leader>jg :JavaGetSet<CR>
+map <leader>jc :JavaConstructor<CR>
+map <leader>ji :JavaImport<CR>
+map <leader>jo :JavaImportOrganize<CR>
 
 " ctags
 map <leader>tw yiw:tag <c-r>0<CR>
@@ -279,9 +285,6 @@ nnoremap <leader>sw" :silent! normal ds"<ESC>i:<ESC>
 nnoremap <leader>sw' :silent! normal ds'<ESC>i:<ESC>
 nnoremap <leader>ss" :silent! normal ysiw"<ESC>:silent! normal hx<ESC>
 nnoremap <leader>ss' :silent! normal ysiw'<ESC>:silent! normal hx<ESC>
-
-" underscore to camelcase
-vmap <leader>c :s-_\([a-z]\)-\U\1-g<CR>
 
 " buffer management
 nnoremap <leader>bd :bdelete<CR>
